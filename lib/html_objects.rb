@@ -16,3 +16,7 @@ end
 
 require "html_objects/version"
 require "html_objects/label"
+require "html_objects/container"
+require "html_objects/document"
+require "html_objects/head"
+require "html_objects/body"
