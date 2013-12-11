@@ -18,7 +18,40 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+Document.new.to_html # => <html></html>
+
+title = 'Welcome to my home page!'
+
+Document.new(
+  Head.new(
+    [ Title.new(title)
+    ]),
+  Body.new([
+    H1.new(title),
+    Form.new('/users',
+      [ TextField.new('date', 'Date (YYYY-MM-DD)', :class => 'input')
+      , SubmitButton.new('Create')
+      ])
+  ])
+).to_html
+
+# =>
+
+'<html>
+<head>
+<title>Welcome to my home page!</title>
+</head>
+<body>
+<h1>Welcome to my home page!</h1>
+<form method="post" action="/users">
+<label for="date">Date (YYYY-MM-DD)</label>
+<input type="text" class="input" name="date" />
+<input type="submit" value="Create" />
+</form>
+</body>
+</html>'
+```
 
 ## Contributing
 
