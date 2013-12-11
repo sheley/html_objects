@@ -6,7 +6,7 @@ module HtmlObjects
     end
 
     def to_html
-      '<label for="%s">%s</label>' % [ @name, @title ]
+      '<label for="%s">%s</label>' % Escape.map_html([ @name, @title ])
     end
   end
 end
