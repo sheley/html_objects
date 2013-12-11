@@ -1,5 +1,5 @@
-require "html_objects/version"
-
 module HtmlObjects
-  # Your code goes here...
 end
+
+require "html_objects/version"
+require "html_objects/label"
