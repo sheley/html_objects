@@ -21,20 +21,22 @@ Or install it yourself as:
 ```ruby
 Document.new.to_html # => <html></html>
 
-title = 'Welcome to my home page!'
+def page(title)
+  Document.new(
+    Head.new(
+      [ Title.new(title)
+      ]),
+    Body.new([
+      H1.new(title),
+      Form.new('/users',
+        [ TextField.new('date', 'Date (YYYY-MM-DD)', :class => 'input')
+        , SubmitButton.new('Create')
+        ])
+    ])
+  )
+end
 
-Document.new(
-  Head.new(
-    [ Title.new(title)
-    ]),
-  Body.new([
-    H1.new(title),
-    Form.new('/users',
-      [ TextField.new('date', 'Date (YYYY-MM-DD)', :class => 'input')
-      , SubmitButton.new('Create')
-      ])
-  ])
-).to_html
+page('Welcome to my home page!').to_html
 
 # =>
 
