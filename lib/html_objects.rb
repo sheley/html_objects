@@ -16,3 +16,5 @@ end
 
 require "html_objects/version"
 require "html_objects/label"
+require "html_objects/textfield"
+require "html_objects/input"
