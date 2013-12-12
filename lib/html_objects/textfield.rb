@@ -9,9 +9,10 @@ module HtmlObjects
       @title = title
   	end
 
-  	def to_htmlts
-      [Label.new(@name, @title).to_html, Input.new("text", @name)]
-      	.join("\n")
+  	def to_html
+      [ Label.new(@name, @title).to_html,
+        Input.new("text", @name).to_html
+      ].join("\n")
     end
   end
 end
